@@ -1,8 +1,8 @@
 const person = {
-    name: "Mahir Siam",
-    age: 25,
-    city: "Dhaka",
-    hobbies: ["Reading", "Coding", "Traveling"],
+  name: "Mahir Siam",
+  age: 21,
+  city: "Dhaka",
+  hobbies: ["Reading", "Coding", "Traveling"],
 };
 
 // Converting JavaScript object to JSON string
