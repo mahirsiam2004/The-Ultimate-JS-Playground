@@ -10,3 +10,4 @@ console.log("After Shift:", numbers, "Removed:", firstElement);
 
 numbers.unshift(10); //add new in first
 console.log("After Unshift:", numbers);
+//array oparation
