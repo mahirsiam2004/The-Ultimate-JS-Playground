@@ -4,18 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advanced JavaScript</title>
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <style>
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
         background-color: #f4f4f4;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
       }
 
+      /* ORIGINAL HOMEPAGE (DO NOT TOUCH) */
       .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
         text-align: center;
+        background-color: #f4f4f4;
       }
 
       h1 {
@@ -26,6 +36,7 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+
       button {
         font-size: 22px;
         font-weight: bold;
@@ -38,6 +49,7 @@
         position: relative;
         overflow: hidden;
         transition: 0.3s ease-in-out;
+        margin-top: 20px;
       }
 
       button::before {
@@ -49,11 +61,10 @@
         top: 0;
         left: -100%;
         transition: 0.3s ease-in-out;
-        
       }
+
       button:hover::before {
         left: 0;
-    
       }
 
       button span {
@@ -65,20 +76,186 @@
 
       button:hover span {
         color: white;
-        
       }
-      button:hover{
+
+      button:hover {
         transform: scale(1.1);
       }
 
+      /* BLOG SECTION */
+      .blog {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+      }
+
+      .blog h2 {
+        color: #222;
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .blog p {
+        line-height: 1.7;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      pre {
+        position: relative;
+        background-color: #1e1e1e;
+        color: #eee;
+        padding: 16px;
+        border-radius: 10px;
+        margin-top: 10px;
+        font-size: 14px;
+        overflow-x: auto;
+      }
+
+      .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #444;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .copy-btn:hover {
+        background: #666;
+      }
+
+      code {
+        font-family: Consolas, monospace;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px;
+        margin-top: 40px;
+        background: #f4f4f4;
+        font-weight: 600;
+      }
+
+      .highlight {
+        color: #e91e63;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
+    <!-- HOMEPAGE DESIGN -->
     <div class="main">
       <h1>Advanced <span>JavaScript</span></h1>
       <button><span>Let's Roc<span style="color: red;">K</span></span></button>
     </div>
-    <script src="time.js"></script>
-    <script src="IntervalTimeout.js"></script>
+
+    <!-- BLOG SECTION -->
+    <div class="blog">
+      <h2><i class="fas fa-code"></i> 1. Closures</h2>
+      <p>A closure gives you access to an outer function's scope even after the outer function has closed.</p>
+      <pre><button class="copy-btn">Copy</button><code>function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    console.log(count);
+  };
+}
+const counter = outer();
+counter(); // 1
+counter(); // 2</code></pre>
+
+      <h2><i class="fas fa-infinity"></i> 2. Event Loop</h2>
+      <p>JavaScript uses an event loop to handle asynchronous operations on a single thread.</p>
+      <pre><button class="copy-btn">Copy</button><code>console.log("Start");
+setTimeout(() => {
+  console.log("Inside timeout");
+}, 0);
+console.log("End");</code></pre>
+
+      <h2><i class="fas fa-rocket"></i> 3. Promises & Async/Await</h2>
+      <p>Async/await makes asynchronous code look and behave like synchronous code.</p>
+      <pre><button class="copy-btn">Copy</button><code>async function fetchData() {
+  return "Data Loaded!";
+}
+async function load() {
+  const data = await fetchData();
+  console.log(data);
+}
+load();</code></pre>
+
+      <h2><i class="fas fa-tools"></i> 4. Destructuring, Spread & Rest</h2>
+      <pre><button class="copy-btn">Copy</button><code>const [a, b] = [1, 2];
+const { name } = { name: "Mahir" };
+
+function total(...nums) {
+  return nums.reduce((a, b) => a + b);
+}
+console.log(total(1, 2, 3));</code></pre>
+
+      <h2><i class="fas fa-cubes"></i> 5. Modules</h2>
+      <pre><button class="copy-btn">Copy</button><code>// utils.js
+export const greet = (name) => `Hello, ${name}`;
+
+// main.js
+import { greet } from './utils.js';
+console.log(greet("World"));</code></pre>
+
+      <h2><i class="fas fa-tachometer-alt"></i> 6. Debounce & Throttle</h2>
+      <pre><button class="copy-btn">Copy</button><code>// Debounce
+function debounce(fn, delay) {
+  let timer;
+  return function () {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, arguments), delay);
+  };
+}
+
+// Throttle
+function throttle(fn, limit) {
+  let lastCall = 0;
+  return function () {
+    const now = Date.now();
+    if (now - lastCall > limit) {
+      lastCall = now;
+      fn.apply(this, arguments);
+    }
+  };
+}</code></pre>
+
+      <h2><i class="fas fa-brain"></i> 7. Memory Leaks</h2>
+      <pre><button class="copy-btn">Copy</button><code>let cache = {};
+function remember(key, val) {
+  cache[key] = val; // Caution: Can grow infinitely!
+}</code></pre>
+
+      <h2><i class="fas fa-lightbulb"></i> More coming soon...</h2>
+    </div>
+
+    <footer>
+      Made with ❤️ by <span class="highlight">Mahir Siam</span> | Founder of Innovatrix
+    </footer>
+
+    <!-- COPY BUTTON SCRIPT -->
+    <script>
+      const copyButtons = document.querySelectorAll(".copy-btn");
+
+      copyButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const code = btn.nextElementSibling.innerText;
+          navigator.clipboard.writeText(code);
+          btn.innerText = "Copied!";
+          setTimeout(() => (btn.innerText = "Copy"), 2000);
+        });
+      });
+    </script>
   </body>
 </html>
