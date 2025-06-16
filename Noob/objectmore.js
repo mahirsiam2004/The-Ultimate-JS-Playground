@@ -10,6 +10,7 @@ for (const m in computer) {
   console.log(computer[m]);
 }
 
+//more ways for create an object
 const newObject = new Object();
 const newObject2 = Object.create();
 colsole.log(newObject);
