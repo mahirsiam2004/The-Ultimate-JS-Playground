@@ -1,6 +1,6 @@
 const date = new Date();
 console.log(date);
-console.log("mahir siam");
+console.log("Mahir Siam");
 
 const year = date.getFullYear();
 const month = date.getMonth() + 1; // Months are zero-based, so add 1
