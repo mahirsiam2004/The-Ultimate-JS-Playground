@@ -7,3 +7,7 @@ setInterval(()=>{
     name=names[index++];
     console.log(name, name.length);
 },1000);
+
+// for(;;){
+//     console.log("mahir");
+// }
