@@ -1,6 +1,7 @@
 * {
   border: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -8,6 +9,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 #page-1 {
   height: 100%;
@@ -33,6 +35,27 @@ body {
   height: 100%;
   width: 100%;
   background-color: rgb(14, 173, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page-4 {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(234, 175, 72);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* padding: 5vw 0; */
+}
+#page-4 h3{
+font-size: 40vw;
+text-transform: uppercase;
+}
+#page-5 {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(226, 14, 208);
   display: flex;
   justify-content: center;
   align-items: center;
