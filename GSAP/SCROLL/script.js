@@ -54,6 +54,7 @@ gsap.from("#page-1 #box", {
     pin:true
   },
 });
+<<<<<<< HEAD
 
 gsap.from("#page-3 #box", {
     scale:0,
@@ -70,3 +71,21 @@ gsap.from("#page-3 #box", {
     // pin:true
   },
 });
+=======
+// gsap.from("#page-3 #box", {
+//     scale:0,
+//   opacity: 0,
+//   rotate:720,
+//   duration: 1,
+//   scrollTrigger: {
+//     trigger: "#page-3 #box",
+//     scroller:"body",
+//     markers: true,
+//     // start: "top 50%",
+//     // end:"top 10%",
+//     scrub:2,
+//     // pin:true
+//   },
+// });
+
+>>>>>>> c0e4a39 (fully buggy scrooltrigger)
