@@ -79,3 +79,89 @@ h2{
    padding: 10px;
   background-color: rgb(227, 238, 21);
 }
+=======
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+#page-1 {
+  height: 100%;
+  width: 100%;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-2 {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(225, 173, 230);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#page-3 {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(14, 173, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page-4 {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(234, 175, 72);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* padding: 5vw 0; */
+}
+#page-4 h3{
+font-size: 40vw;
+text-transform: uppercase;
+}
+#page-5 {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(226, 14, 208);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+<<<<<<< HEAD
+=======
+
+>>>>>>> c0e4a39 (fully buggy scrooltrigger)
+#box {
+  background-color: crimson;
+  height: 300px;
+  width: 300px;
+}
+
+h1{
+  font-size: 60px;
+  position: relative;
+  background-color: red;
+  padding: 10px;
+}
+h2{
+  font-size: 60px;
+  position: relative;
+   padding: 10px;
+  background-color: rgb(227, 238, 21);
+}
+>>>>>>> saved-changes
